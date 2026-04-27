@@ -1,0 +1,127 @@
+DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profe Estricta 😈</title>
+
+```
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 40px;
+        background: linear-gradient(135deg, #89f7fe, #66a6ff);
+        transition: background 0.5s;
+    }
+
+    h1 {
+        color: #222;
+    }
+<!
+    button {
+        padding: 15px 25px;
+        margin: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #btnNormal {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #btnEstricta {
+        background-color: #e53935;
+        color: white;
+    }
+
+    #btnGenerar {
+        background-color: #333;
+        color: white;
+    }
+
+    #resultado {
+        margin-top: 30px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .shake {
+        animation: shake 0.3s;
+    }
+
+    @keyframes shake {
+        0% { transform: translate(2px, 2px); }
+        25% { transform: translate(-2px, -2px); }
+        50% { transform: translate(2px, -2px); }
+        75% { transform: translate(-2px, 2px); }
+        100% { transform: translate(2px, 2px); }
+    }
+</style>
+```
+
+</head>
+<body>
+
+```
+<h1>🎓 Generador vs Profe 😈</h1>
+
+<button id="btnNormal" onclick="modoNormal()">Modo Normal 😇</button>
+<button id="btnEstricta" onclick="modoEstricto()">Modo Profe Estricta 😈</button>
+<br>
+<button id="btnGenerar" onclick="generar()">Generar respuesta 🎲</button>
+
+<p id="resultado">Presiona un botón...</p>
+
+<script>
+    let modo = "normal";
+
+    function modoNormal() {
+        modo = "normal";
+        document.body.style.background = "linear-gradient(135deg, #89f7fe, #66a6ff)";
+        document.getElementById("resultado").innerText = "Modo relajado activado 😇";
+    }
+
+    function modoEstricto() {
+        modo = "estricto";
+        document.body.style.background = "linear-gradient(135deg, #ff4e50, #000000)";
+        document.getElementById("resultado").innerText = "⚠️ Profe estricta activada ⚠️";
+    }
+
+    function generar() {
+        let normal = [
+            "Profe, mi perro se comió la tarea 🐶",
+            "Se fue el internet 😭",
+            "La hice pero no la encontré 😅"
+        ];
+
+        let estricta = [
+            "¿Excusas? 0 puntos. 😐",
+            "Eso no es serio. Reprobado. ❌",
+            "Mañana con tu tutor. 📞",
+            "Otra vez sin tarea... interesante 🤨",
+            "Eso no justifica nada. 😑"
+        ];
+
+        let lista = (modo === "normal") ? normal : estricta;
+        let random = Math.floor(Math.random() * lista.length);
+
+        let resultado = document.getElementById("resultado");
+        resultado.innerText = lista[random];
+
+        if (modo === "estricto") {
+            document.body.classList.add("shake");
+            setTimeout(() => {
+                document.body.classList.remove("shake");
+            }, 300);
+        }
+    }
+</script>
+```
+
+</body>
+</html>
